@@ -287,6 +287,8 @@ def main():
     while(1):
         print('Input guess number : ', end='')
         user_input = input()
+        if user_input == '0':
+            break
         if is_validated_number(user_input) == False:
             print('Wrong Input, Input again')
         else:
