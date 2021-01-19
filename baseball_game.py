@@ -94,7 +94,7 @@ def is_duplicated_number(three_digit):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
 
     num = sorted(list(three_digit))
-    if sorted(list(set(num))) == num:
+    if sorted(list(set(num))) != num:
         result = True
     else:
         result = False
@@ -308,5 +308,5 @@ def main():
     print('Thank you for using this program')
     print('End of the Game')
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
