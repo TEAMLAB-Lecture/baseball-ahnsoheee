@@ -283,7 +283,7 @@ def main():
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
     isEnd = False
-    while(isEnd == False):
+    while(not isEnd):
         user_input = input('Input guess number : ')
         if user_input == '0':
             isEnd = True
@@ -295,16 +295,13 @@ def main():
             if result == [3, 0]:
                 while(isEnd == False):
                     retry = input('You win, one more(Y/N) ?')
-
                     if is_yes(retry):
                         random_number = str(get_not_duplicated_three_digit_number())
                         print("Random Number is : ", random_number)
                         break
-                    
                     elif is_no(retry):
                         isEnd = True
                         break
-                    
                     else:
                         print('Wrong Input, Input again')
         else:
