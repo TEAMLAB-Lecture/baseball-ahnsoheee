@@ -93,8 +93,7 @@ def is_duplicated_number(three_digit):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
 
-    num = sorted(list(three_digit))
-    if sorted(list(set(num))) != num:
+    if len(set(list(three_digit))) != 3:
         result = True
     else:
         result = False
@@ -155,12 +154,11 @@ def get_not_duplicated_three_digit_number():
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     # get_random_number() 함수를 사용하여 random number 생성
 
-    arr = []
-    while len(arr) < 3:
-        num = str(random.randint(1, 9))
-        if num not in arr:
-            arr.append(num)
-    result = int(''.join(arr))
+    check = False
+    while (not check):
+        result = get_random_number()
+        if not is_duplicated_number(str(result)):
+            break
     # ==================================
     return result
 
